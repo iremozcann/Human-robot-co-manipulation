@@ -1,4 +1,4 @@
-% developed a code for estimating human motion trajectory based on the “minimum jerk principle
+% developed a code for estimating human motion trajectory based on the minimum jerk principle
 %MATLAB code displaying the position, velocity, acceleration, and jerk trajectories as a function of time 
 %The MJT is represented by the following function
 %x(t)=x0+(xf-x0)*(6*t1.^5-15*t1.^4+10*t1.^3)
