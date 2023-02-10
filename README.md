@@ -1,4 +1,4 @@
-# Human-robot-co-manipulation
+# Human-robot co-manipulation
 In order to make pHRI more effective, we need robots to anticipate the human partner's behavior
 and act accordingly. For example, in collaborative manipulation of heavy objects, if the robot anticipates the 
 human motion trajectory, it can contribute to the acceleration/deceleration of the manipulated object more 
