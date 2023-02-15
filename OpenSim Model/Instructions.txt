@@ -1,0 +1,40 @@
+##OPENSIM MODEL INSTRUCTIONS
+
+1. Go to this OpenSim package link and download the MoBL-ARMS Upper Extremity Model
+2. You will find the zipped folder "MoBL-ARMS-Upper-Extremity-Model.zip”. Download this folder and use the files in the Benchmarking Simulations folder for your simulations .
+3. There are three different versions of the benchmarking simulations(one compatible with OpenSim 3.3 with Millard-Schutte-matched muscle models, one compatible with Opensim 4.1 with Millard-Schutte-matched muscle models, and one compatible with OpenSim 4.1
+with Millard’s original muscle model). Open the Opensim 4.1 with Millard-Schutte matched muscle models.
+4. The models is in the folder: ..../Benchmarking Simulations/ 4.1 Model with Millard Schutte Matched Curves
+5. In OpenSim, load the Upper Extremity Model. Open Model→ "MoBL-ARMS-module5-scaleIK.osim.”
+6. Open Scale Model Tool. Tools → Scale Model
+7. Upload the provided settings file. Load →“ MoBL-ARMS-module5-Scale-Setup.xml”
+8. This file has made the following modifications to the default settings:
+(a) Checked “Preserve mass distribution during scale” box
+(b) Checked “Marker data for measurements” box
+(c) Loaded “Static.trc” file under scale model heading
+(d) Set Average measurement between times 7.845 and 8.525
+(e) Checked “Adjust Model Markers” box
+(f) Loaded “Static.trc” file for Marker data for static pose
+(g) Set Average measurement between times 7.845 and 8.525
+9. Leave the rest of the settings to default. Click Save if you would like to save these settings to a setup file for future simulations.
+10. Click Run to run the simulation.
+11. A new scaled model will appear in the model view window, with a corresponding new model listed in the navigator window. To save the model, go to the File menu and click
+“Save as”. Save the model to a folder of your choosing with the name “MoBL-ARMS module5-scaled.osim”
+12. In the “Coordinates” tab, set r-x=90 degrees, r-y=0 degrees, r-z=10 degrees, deviation= 0 degrees and flexion = 0 degrees, and lock these coordinates. This reflects known
+experimental postures; the wrist was braced in neutral for this trial.
+13. With the scaled model as the current model, open Inverse Kinematics Tool. Tools→Inverse Kinematics
+14. Upload the provided settings file. Load → “ MoBL-ARMSmodule5-IK-Setup.xml” This file has made the following modifications to the default settings:
+(a) a) Loaded marker data for trial: “. . . / InputFiles/ InputFiles-module5-ScaleIK/reach.trc”
+15. Click Save if you would like to save these settings to a setup file for future simulations
+16. Click Run to run the simulation.
+17. A new motion named “Results” will appear under motions in the navigator. Right click and save as. . . “. . . / IKreach.mot” to a folder of your choosing.
+18. Filter this offline using Matlab. We have provided a Matlab filter: “. . . / InputFiles/InputFiles-module5-ScaleIK/ IKfilter.m” This will create a file called. . . /ikfiltered.sto
+19. Outcomes will be stored in a MOT-file or a STO-file that can be opened using the Plot Tool in OpenSim.Load your results in Plot Tool by clicking “y-Quantity”. Select “Load
+file” and browse to your output. It will bring up a tickbox to choose the variable you would like to plot from among the columns in the datafile. Select the value(s) of interest
+(generally a joint or muscle name) and click OK. Click “x-Quantity” and another tickbox will come up. Choose “time” and click OK. Click “Add” to plot the curve. Without
+closing the window, click “y-Quantity” again and this time load the Comparison output file
+
+###########
+Note That: Other software was used for this task as open-sim did not have features to enable motion rendering. Used Blender 3D (open source 3D software).
+In Blender, used a box that can follow the position data ; then, fixed the wrist motion to the box, and the rest of the arm joints will follow accordingly using built-in inverse kinematics.
+The data was converted to mot.file format thus obtaining motion for OpenSim ; so created motion.
